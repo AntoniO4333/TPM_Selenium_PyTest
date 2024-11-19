@@ -10,7 +10,7 @@ pipeline {
 
         stage('Setup Python') {
             steps {
-                dir('lab11') { // Работать только с папкой lab11
+                dir('lab11') {
                     sh 'python3 --version'
                     sh 'pip3 install --upgrade pip'
                 }
@@ -19,7 +19,7 @@ pipeline {
 
         stage('Install dependencies') {
             steps {
-                dir('lab11') { // Работать только с папкой lab11
+                dir('lab11') {
                     sh 'pip3 install -r requirements.txt'
                 }
             }
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Run tests') {
             steps {
-                dir('lab11') { // Работать только с папкой lab11
+                dir('lab11') {
                     sh 'pytest'
                 }
             }

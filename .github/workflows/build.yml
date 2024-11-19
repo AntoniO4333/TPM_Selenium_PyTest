@@ -3,7 +3,7 @@ name: Python CI for lab11
 on:
   push:
     paths:
-      - 'lab11/**' # Запуск только при изменениях в папке lab11
+      - 'lab11/**'
   pull_request:
     paths:
       - 'lab11/**'
@@ -22,11 +22,11 @@ jobs:
         python-version: 3.11
 
     - name: Install dependencies
-      working-directory: lab11 # Переход в папку lab11
+      working-directory: lab11
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Run tests
-      working-directory: lab11 # Переход в папку lab11
+      working-directory: lab11
       run: pytest
